@@ -1,0 +1,14 @@
+[Unit]
+Description=Motion daemon
+After=local-fs.target
+
+[Service]
+User=http
+Group=http
+ExecStart=/usr/bin/motion -c /etc/motion/motion.conf
+Type=forking
+#StandardOutput=null
+StandardError=null
+
+[Install]
+WantedBy=multi-user.target
